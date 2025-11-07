@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 export default function CareerPage() {
-  // ✅ Form State
+  // ✅ Form Fields State
   const [form, setForm] = useState({
     fullName: "",
     email: "",
@@ -13,22 +13,64 @@ export default function CareerPage() {
     message: "",
   });
 
-  // ✅ Form Input Change Handler
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  // ✅ File Upload State
+  const [cv, setCv] = useState<File | null>(null);
+
+  // ✅ Loading / Success / Error UI
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null);
+
+  // ✅ Input handler
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  // ✅ Submit Handler
-  const handleSubmit = (e: React.FormEvent) => {
+  // ✅ Submit handler
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Submitted Data:", form);
+    setLoading(true);
+    setSuccess(null);
+    setError(null);
+
+    try {
+      const fd = new FormData();
+      fd.append("fullName", form.fullName);
+      fd.append("email", form.email);
+      fd.append("pin", form.pin);
+      fd.append("phone", form.phone);
+      fd.append("address", form.address);
+      fd.append("message", form.message);
+      if (cv) fd.append("cv", cv);
+
+      const res = await fetch("/api/career", {
+        method: "POST",
+        body: fd,
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error || "Submission failed");
+      }
+
+      setSuccess("✅ Application submitted successfully. We will contact you soon.");
+      setForm({ fullName: "", email: "", pin: "", phone: "", address: "", message: "" });
+      setCv(null);
+
+    } catch (err: any) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <section className="py-16 flex justify-center">
       <div className="max-w-3xl w-full px-6">
 
-        {/* ✅ Top Title Section */}
+        {/* ✅ Heading */}
         <div className="text-center mb-12 px-5">
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight font_family_jakarta">
             Join Our Team
@@ -38,7 +80,7 @@ export default function CareerPage() {
           </p>
         </div>
 
-        {/* ✅ Form Container */}
+        {/* ✅ Styled Form */}
         <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
           <h2 className="text-3xl font-bold text-center text-[#0A1B6F] mb-8">
             Apply Now
@@ -81,7 +123,7 @@ export default function CareerPage() {
               {/* Logo */}
               <div className="flex justify-center">
                 <img
-                  src="/logo.png"   // 🔁 change according to your path
+                  src="/logo.png"
                   alt="logo"
                   className="w-32 h-auto object-contain"
                 />
@@ -141,13 +183,41 @@ export default function CareerPage() {
               ></textarea>
             </div>
 
-            {/* ✅ Submit */}
+            {/* ✅ File Upload */}
+            <div>
+              <label className="block text-sm mb-1 font-medium">Upload CV / Resume</label>
+              <input
+                type="file"
+                accept=".pdf,.doc,.docx"
+                onChange={(e) => setCv(e.target.files?.[0] ?? null)}
+              />
+              {cv && (
+                <div className="text-sm mt-1 text-gray-600">{cv.name}</div>
+              )}
+            </div>
+
+            {/* ✅ Submit button */}
             <button
               type="submit"
+              disabled={loading}
               className="w-full bg-[#0A1B6F] hover:bg-[#081659] text-white py-4 rounded-lg text-lg font-semibold transition"
             >
-              Submit Application
+              {loading ? "Submitting..." : "Submit Application"}
             </button>
+
+            {/* ✅ Success / Error Message Below Submit */}
+            {success && (
+              <p className="text-green-700 text-sm bg-green-50 border border-green-200 px-4 py-3 rounded-lg mt-3">
+                {success}
+              </p>
+            )}
+
+            {error && (
+              <p className="text-red-700 text-sm bg-red-50 border border-red-200 px-4 py-3 rounded-lg mt-3">
+                {error}
+              </p>
+            )}
+
           </form>
         </div>
       </div>

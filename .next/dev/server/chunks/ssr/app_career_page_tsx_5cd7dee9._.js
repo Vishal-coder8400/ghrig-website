@@ -12,7 +12,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 ;
 ;
 function CareerPage() {
-    // ✅ Form State
+    // ✅ Form Fields State
     const [form, setForm] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])({
         fullName: "",
         email: "",
@@ -21,17 +21,57 @@ function CareerPage() {
         address: "",
         message: ""
     });
-    // ✅ Form Input Change Handler
+    // ✅ File Upload State
+    const [cv, setCv] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
+    // ✅ Loading / Success / Error UI
+    const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [success, setSuccess] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
+    const [error, setError] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
+    // ✅ Input handler
     const handleChange = (e)=>{
         setForm({
             ...form,
             [e.target.name]: e.target.value
         });
     };
-    // ✅ Submit Handler
-    const handleSubmit = (e)=>{
+    // ✅ Submit handler
+    const handleSubmit = async (e)=>{
         e.preventDefault();
-        console.log("Submitted Data:", form);
+        setLoading(true);
+        setSuccess(null);
+        setError(null);
+        try {
+            const fd = new FormData();
+            fd.append("fullName", form.fullName);
+            fd.append("email", form.email);
+            fd.append("pin", form.pin);
+            fd.append("phone", form.phone);
+            fd.append("address", form.address);
+            fd.append("message", form.message);
+            if (cv) fd.append("cv", cv);
+            const res = await fetch("/api/career", {
+                method: "POST",
+                body: fd
+            });
+            if (!res.ok) {
+                const data = await res.json();
+                throw new Error(data.error || "Submission failed");
+            }
+            setSuccess("✅ Application submitted successfully. We will contact you soon.");
+            setForm({
+                fullName: "",
+                email: "",
+                pin: "",
+                phone: "",
+                address: "",
+                message: ""
+            });
+            setCv(null);
+        } catch (err) {
+            setError(err.message);
+        } finally{
+            setLoading(false);
+        }
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         className: "py-16 flex justify-center",
@@ -46,7 +86,7 @@ function CareerPage() {
                             children: "Join Our Team"
                         }, void 0, false, {
                             fileName: "[project]/app/career/page.tsx",
-                            lineNumber: 33,
+                            lineNumber: 75,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -54,13 +94,13 @@ function CareerPage() {
                             children: "Build your career with us. Fill the form below and our HR team will contact you soon."
                         }, void 0, false, {
                             fileName: "[project]/app/career/page.tsx",
-                            lineNumber: 36,
+                            lineNumber: 78,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/career/page.tsx",
-                    lineNumber: 32,
+                    lineNumber: 74,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -71,7 +111,7 @@ function CareerPage() {
                             children: "Apply Now"
                         }, void 0, false, {
                             fileName: "[project]/app/career/page.tsx",
-                            lineNumber: 43,
+                            lineNumber: 85,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -91,7 +131,7 @@ function CareerPage() {
                                                             children: "Full Name*"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/career/page.tsx",
-                                                            lineNumber: 55,
+                                                            lineNumber: 97,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -103,13 +143,13 @@ function CareerPage() {
                                                             placeholder: "Enter your name"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/career/page.tsx",
-                                                            lineNumber: 56,
+                                                            lineNumber: 98,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/career/page.tsx",
-                                                    lineNumber: 54,
+                                                    lineNumber: 96,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -119,7 +159,7 @@ function CareerPage() {
                                                             children: "Email*"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/career/page.tsx",
-                                                            lineNumber: 68,
+                                                            lineNumber: 110,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -132,19 +172,19 @@ function CareerPage() {
                                                             placeholder: "Enter your email"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/career/page.tsx",
-                                                            lineNumber: 69,
+                                                            lineNumber: 111,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/career/page.tsx",
-                                                    lineNumber: 67,
+                                                    lineNumber: 109,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/career/page.tsx",
-                                            lineNumber: 51,
+                                            lineNumber: 93,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -155,18 +195,18 @@ function CareerPage() {
                                                 className: "w-32 h-auto object-contain"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/career/page.tsx",
-                                                lineNumber: 83,
+                                                lineNumber: 125,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/career/page.tsx",
-                                            lineNumber: 82,
+                                            lineNumber: 124,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/career/page.tsx",
-                                    lineNumber: 50,
+                                    lineNumber: 92,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -179,7 +219,7 @@ function CareerPage() {
                                                     children: "Pin Code*"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/career/page.tsx",
-                                                    lineNumber: 94,
+                                                    lineNumber: 136,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -191,13 +231,13 @@ function CareerPage() {
                                                     placeholder: "Enter pin code"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/career/page.tsx",
-                                                    lineNumber: 95,
+                                                    lineNumber: 137,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/career/page.tsx",
-                                            lineNumber: 93,
+                                            lineNumber: 135,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -207,7 +247,7 @@ function CareerPage() {
                                                     children: "Phone Number*"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/career/page.tsx",
-                                                    lineNumber: 106,
+                                                    lineNumber: 148,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -219,19 +259,19 @@ function CareerPage() {
                                                     placeholder: "Enter phone number"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/career/page.tsx",
-                                                    lineNumber: 107,
+                                                    lineNumber: 149,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/career/page.tsx",
-                                            lineNumber: 105,
+                                            lineNumber: 147,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/career/page.tsx",
-                                    lineNumber: 92,
+                                    lineNumber: 134,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -241,7 +281,7 @@ function CareerPage() {
                                             children: "Address*"
                                         }, void 0, false, {
                                             fileName: "[project]/app/career/page.tsx",
-                                            lineNumber: 120,
+                                            lineNumber: 162,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -253,13 +293,13 @@ function CareerPage() {
                                             placeholder: "Enter your address"
                                         }, void 0, false, {
                                             fileName: "[project]/app/career/page.tsx",
-                                            lineNumber: 121,
+                                            lineNumber: 163,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/career/page.tsx",
-                                    lineNumber: 119,
+                                    lineNumber: 161,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -269,7 +309,7 @@ function CareerPage() {
                                             children: "Message (Optional)"
                                         }, void 0, false, {
                                             fileName: "[project]/app/career/page.tsx",
-                                            lineNumber: 133,
+                                            lineNumber: 175,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -281,45 +321,95 @@ function CareerPage() {
                                             placeholder: "Write message..."
                                         }, void 0, false, {
                                             fileName: "[project]/app/career/page.tsx",
-                                            lineNumber: 134,
+                                            lineNumber: 176,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/career/page.tsx",
-                                    lineNumber: 132,
+                                    lineNumber: 174,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                            className: "block text-sm mb-1 font-medium",
+                                            children: "Upload CV / Resume"
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/career/page.tsx",
+                                            lineNumber: 188,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                            type: "file",
+                                            accept: ".pdf,.doc,.docx",
+                                            onChange: (e)=>setCv(e.target.files?.[0] ?? null)
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/career/page.tsx",
+                                            lineNumber: 189,
+                                            columnNumber: 15
+                                        }, this),
+                                        cv && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "text-sm mt-1 text-gray-600",
+                                            children: cv.name
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/career/page.tsx",
+                                            lineNumber: 195,
+                                            columnNumber: 17
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/app/career/page.tsx",
+                                    lineNumber: 187,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                     type: "submit",
+                                    disabled: loading,
                                     className: "w-full bg-[#0A1B6F] hover:bg-[#081659] text-white py-4 rounded-lg text-lg font-semibold transition",
-                                    children: "Submit Application"
+                                    children: loading ? "Submitting..." : "Submit Application"
                                 }, void 0, false, {
                                     fileName: "[project]/app/career/page.tsx",
-                                    lineNumber: 145,
+                                    lineNumber: 200,
                                     columnNumber: 13
+                                }, this),
+                                success && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                    className: "text-green-700 text-sm bg-green-50 border border-green-200 px-4 py-3 rounded-lg mt-3",
+                                    children: success
+                                }, void 0, false, {
+                                    fileName: "[project]/app/career/page.tsx",
+                                    lineNumber: 210,
+                                    columnNumber: 15
+                                }, this),
+                                error && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                    className: "text-red-700 text-sm bg-red-50 border border-red-200 px-4 py-3 rounded-lg mt-3",
+                                    children: error
+                                }, void 0, false, {
+                                    fileName: "[project]/app/career/page.tsx",
+                                    lineNumber: 216,
+                                    columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/career/page.tsx",
-                            lineNumber: 47,
+                            lineNumber: 89,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/career/page.tsx",
-                    lineNumber: 42,
+                    lineNumber: 84,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/app/career/page.tsx",
-            lineNumber: 29,
+            lineNumber: 71,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/app/career/page.tsx",
-        lineNumber: 28,
+        lineNumber: 70,
         columnNumber: 5
     }, this);
 }
