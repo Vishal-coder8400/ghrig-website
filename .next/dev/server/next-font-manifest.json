@@ -1,11 +1,8 @@
 {
   "app": {
     "[project]/app/_not-found/page": [],
-    "[project]/app/about_us/page": [],
-    "[project]/app/career/page": [],
     "[project]/app/page": [],
     "[project]/app/privacy-policy/page": [],
-    "[project]/app/services/page": [],
     "[project]/app/terms-and-conditions/page": []
   },
   "appUsingSizeAdjust": false,

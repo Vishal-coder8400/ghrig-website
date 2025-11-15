@@ -44,7 +44,7 @@ __turbopack_context__.s([
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/rsc/react-jsx-dev-runtime.js [app-rsc] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/rsc/react.js [app-rsc] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/client/app-dir/link.react-server.js [app-rsc] (ecmascript)"); // ✅ Add this import
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/client/app-dir/link.react-server.js [app-rsc] (ecmascript)");
 ;
 ;
 ;
@@ -54,14 +54,9 @@ const informationLinks = [
     "Contact Us",
     "Blog"
 ];
-const menuLinks = [
-    "For a couple",
-    "For him",
-    "For her"
-];
 function Footer() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("footer", {
-        className: "relative bg-white mx-auto  px-4 sm:px-10",
+        className: "relative bg-white mx-auto px-4 sm:px-10",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
                 className: "absolute inset-0 w-full h-full object-cover opacity-80",
@@ -69,7 +64,7 @@ function Footer() {
                 src: "../assets/images/gradientbg.png"
             }, void 0, false, {
                 fileName: "[project]/components/footer.jsx",
-                lineNumber: 16,
+                lineNumber: 14,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -81,7 +76,7 @@ function Footer() {
                             className: "flex items-center gap-2 invert"
                         }, void 0, false, {
                             fileName: "[project]/components/footer.jsx",
-                            lineNumber: 25,
+                            lineNumber: 24,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -90,11 +85,11 @@ function Footer() {
                                 className: "flex flex-col items-start gap-4 lg:gap-6 flex-1",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                        className: "opacity-60 [font-family:'Inter',Helvetica] font-medium text-[#1a1819] text-xs lg:text-[10px] tracking-[0.40px] leading-[14px] uppercase",
+                                        className: "opacity-60 font-medium text-[#1a1819] text-xs lg:text-[10px] tracking-[0.40px] leading-[14px] uppercase",
                                         children: "INFORMATION"
                                     }, void 0, false, {
                                         fileName: "[project]/components/footer.jsx",
-                                        lineNumber: 31,
+                                        lineNumber: 29,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -104,81 +99,74 @@ function Footer() {
                                                     className: "self-stretch",
                                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                                         href: "#",
-                                                        className: "[font-family:'Inter',Helvetica] font-normal text-[#1a1819] text-sm lg:text-base tracking-[0] leading-[22.4px] hover:underline transition-colors",
+                                                        className: "font-normal text-[#1a1819] text-sm lg:text-base leading-[22.4px] hover:underline",
                                                         children: link
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/footer.jsx",
-                                                        lineNumber: 38,
+                                                        lineNumber: 37,
                                                         columnNumber: 21
                                                     }, this)
                                                 }, index, false, {
                                                     fileName: "[project]/components/footer.jsx",
-                                                    lineNumber: 37,
+                                                    lineNumber: 36,
                                                     columnNumber: 19
                                                 }, this)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
                                                     href: "/privacy-policy",
-                                                    className: "[font-family:'Inter',Helvetica] font-normal text-[#1a1819] text-sm lg:text-base tracking-[0] leading-[22.4px] hover:underline transition-colors",
+                                                    className: "font-normal text-[#1a1819] text-sm lg:text-base leading-[22.4px] hover:underline",
                                                     children: "Privacy Policy"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/footer.jsx",
-                                                    lineNumber: 49,
+                                                    lineNumber: 48,
                                                     columnNumber: 19
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/footer.jsx",
-                                                lineNumber: 48,
+                                                lineNumber: 47,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
                                                     href: "/terms-and-conditions",
-                                                    className: "[font-family:'Inter',Helvetica] font-normal text-[#1a1819] text-sm lg:text-base tracking-[0] leading-[22.4px] hover:underline transition-colors",
+                                                    className: "font-normal text-[#1a1819] text-sm lg:text-base leading-[22.4px] hover:underline",
                                                     children: "Terms & Conditions"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/footer.jsx",
-                                                    lineNumber: 58,
+                                                    lineNumber: 57,
                                                     columnNumber: 19
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/footer.jsx",
-                                                lineNumber: 57,
+                                                lineNumber: 56,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/footer.jsx",
-                                        lineNumber: 35,
+                                        lineNumber: 33,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/footer.jsx",
-                                lineNumber: 30,
+                                lineNumber: 28,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/components/footer.jsx",
-                            lineNumber: 29,
+                            lineNumber: 27,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "flex-1 flex flex-col items-end gap-4",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                    className: "h-auto inline-flex items-center gap-2.5 px-4 py-2 bg-[#1a1819] rounded-lg hover:bg-[#1a1819]/90 transition-colors",
-                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "[font-family:'Inter',Helvetica] font-semibold text-white text-sm tracking-[0] leading-[19.6px] whitespace-nowrap",
-                                        children: "Request a call"
-                                    }, void 0, false, {
-                                        fileName: "[project]/components/footer.jsx",
-                                        lineNumber: 71,
-                                        columnNumber: 15
-                                    }, this)
+                                    className: "inline-flex items-center gap-2.5 px-4 py-2 bg-[#1a1819] rounded-lg text-white",
+                                    children: "Request a call"
                                 }, void 0, false, {
                                     fileName: "[project]/components/footer.jsx",
-                                    lineNumber: 70,
+                                    lineNumber: 71,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("address", {
@@ -186,173 +174,78 @@ function Footer() {
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                             href: "tel:+19999999999",
-                                            className: "font-semibold text-[#1a1819] text-xs leading-[15.6px] [font-family:'Inter',Helvetica] tracking-[0] whitespace-nowrap hover:underline transition-colors",
+                                            className: "font-semibold text-[#1a1819] text-xs leading-[15.6px] hover:underline",
                                             children: "+1 (999) 999-99-99"
                                         }, void 0, false, {
                                             fileName: "[project]/components/footer.jsx",
-                                            lineNumber: 77,
+                                            lineNumber: 76,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                             href: "mailto:info@logoipsum.com",
-                                            className: "[font-family:'Inter',Helvetica] font-semibold text-[#1a1819] text-xs tracking-[0] leading-[15.6px] whitespace-nowrap hover:underline transition-colors",
+                                            className: "font-semibold text-[#1a1819] text-xs hover:underline",
                                             children: "info@logoipsum.com"
                                         }, void 0, false, {
                                             fileName: "[project]/components/footer.jsx",
-                                            lineNumber: 83,
+                                            lineNumber: 82,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/footer.jsx",
-                                    lineNumber: 76,
+                                    lineNumber: 75,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/footer.jsx",
-                            lineNumber: 69,
+                            lineNumber: 70,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/footer.jsx",
-                    lineNumber: 23,
+                    lineNumber: 21,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/footer.jsx",
-                lineNumber: 22,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "flex flex-col lg:flex-row items-center justify-between  gap-4  w-full px-4 lg:px-10 py-4",
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                            className: "[font-family:'SF_Pro_Display-Medium',Helvetica] font-medium text-black text-3xl lg:text-[40px] tracking-[-0.80px] leading-8 lg:leading-10",
-                            children: [
-                                "If you find the jobs",
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
-                                    fileName: "[project]/components/footer.jsx",
-                                    lineNumber: 97,
-                                    columnNumber: 33
-                                }, this),
-                                "you are interested in or have questions?"
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/components/footer.jsx",
-                            lineNumber: 96,
-                            columnNumber: 11
-                        }, this)
-                    }, void 0, false, {
-                        fileName: "[project]/components/footer.jsx",
-                        lineNumber: 95,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "flex flex-col items-start gap-2 ",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "[font-family:'Inter',Helvetica] font-medium text-black text-sm tracking-[0] leading-[19.6px] whitespace-nowrap",
-                                children: "Just send us your contact email and we will contact you."
-                            }, void 0, false, {
-                                fileName: "[project]/components/footer.jsx",
-                                lineNumber: 102,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "flex w-full lg:w-100 items-center justify-between pl-4 pr-6 py-2 rounded-xl border border-solid border-[#58585899]",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "flex flex-col items-start gap-1 flex-1",
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                                htmlFor: "email-input",
-                                                className: " [font-family:'Inter',Helvetica] font-medium text-black text-xs lg:text-[10px] tracking-[0.40px] leading-[14px] uppercase whitespace-nowrap",
-                                                children: "YOUR EMAIL"
-                                            }, void 0, false, {
-                                                fileName: "[project]/components/footer.jsx",
-                                                lineNumber: 108,
-                                                columnNumber: 15
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                                id: "email-input",
-                                                type: "email",
-                                                defaultValue: "+91",
-                                                className: "border-0 p-0 h-auto font-normal text-black text-sm lg:text-base leading-[22.4px] [font-family:'Inter',Helvetica] tracking-[0] focus-visible:ring-0 focus-visible:ring-offset-0"
-                                            }, void 0, false, {
-                                                fileName: "[project]/components/footer.jsx",
-                                                lineNumber: 114,
-                                                columnNumber: 15
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/components/footer.jsx",
-                                        lineNumber: 107,
-                                        columnNumber: 13
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
-                                        className: "w-[16.5px] h-[9.5px] mr-[-0.75px]",
-                                        alt: "Vector",
-                                        src: "/vector-7.svg"
-                                    }, void 0, false, {
-                                        fileName: "[project]/components/footer.jsx",
-                                        lineNumber: 122,
-                                        columnNumber: 13
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/components/footer.jsx",
-                                lineNumber: 106,
-                                columnNumber: 11
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/components/footer.jsx",
-                        lineNumber: 101,
-                        columnNumber: 9
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "[project]/components/footer.jsx",
-                lineNumber: 94,
+                lineNumber: 20,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "flex flex-col lg:flex-row items-center justify-between w-full px-4 lg:px-10 py-4",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                        className: "[font-family:'Inter',Helvetica] font-normal text-[#2d2d2d] text-xs lg:text-[10px] tracking-[0] leading-[14px] whitespace-nowrap",
+                        className: "font-normal text-[#2d2d2d] text-xs lg:text-[10px]",
                         children: "© 2023 — Copyright"
                     }, void 0, false, {
                         fileName: "[project]/components/footer.jsx",
-                        lineNumber: 132,
+                        lineNumber: 94,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
                         href: "/privacy-policy",
-                        className: "[font-family:'Inter',Helvetica] font-normal text-[#2d2d2d] text-xs lg:text-[10px] text-right tracking-[0] leading-[14px] whitespace-nowrap hover:underline transition-colors",
+                        className: "font-normal text-[#2d2d2d] text-xs lg:text-[10px] hover:underline",
                         children: "Privacy"
                     }, void 0, false, {
                         fileName: "[project]/components/footer.jsx",
-                        lineNumber: 137,
+                        lineNumber: 98,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/footer.jsx",
-                lineNumber: 131,
+                lineNumber: 93,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/footer.jsx",
-        lineNumber: 15,
+        lineNumber: 13,
         columnNumber: 5
     }, this);
 }
-;
 }),
 "[project]/app/layout.tsx [app-rsc] (ecmascript)", ((__turbopack_context__) => {
 "use strict";

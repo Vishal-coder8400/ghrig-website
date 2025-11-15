@@ -136,10 +136,13 @@ module.exports = mod;
 
 __turbopack_context__.s([
     "POST",
-    ()=>POST
+    ()=>POST,
+    "runtime",
+    ()=>runtime
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/server.js [app-route] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$nodemailer$2f$lib$2f$nodemailer$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/nodemailer/lib/nodemailer.js [app-route] (ecmascript)");
+const runtime = "nodejs"; // ✅ Required for Nodemailer on Vercel
 ;
 ;
 async function POST(req) {
@@ -206,7 +209,7 @@ Resume is attached.
         });
     } catch (err) {
         return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-            error: err.message
+            error: err.message || "Internal Server Error"
         }, {
             status: 500
         });
