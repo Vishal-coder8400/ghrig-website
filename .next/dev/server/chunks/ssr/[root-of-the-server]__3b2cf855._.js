@@ -804,7 +804,7 @@ const roles = [
         image: "/assets/images/trainer.png",
         color: "bg-purple-50",
         iconColor: "text-purple-600",
-        href: "https://job-portal-frontend-ghrig-d1pi.vercel.app/trainer/log-in"
+        href: "https://ghrig-new-update.vercel.app/trainer/log-in"
     },
     {
         title: "Job Seeker",
@@ -812,7 +812,7 @@ const roles = [
         image: "/assets/images/jobSeeker.png",
         color: "bg-blue-50",
         iconColor: "text-blue-600",
-        href: "https://job-portal-frontend-ghrig-d1pi.vercel.app/job-seeker/log-in"
+        href: "https://ghrig-new-update.vercel.app/log-in"
     },
     {
         title: "HR Recruiter",
@@ -820,7 +820,7 @@ const roles = [
         image: "/assets/images/jobRecruiter.png",
         color: "bg-green-50",
         iconColor: "text-green-600",
-        href: "https://job-portal-frontend-ghrig-d1pi.vercel.app/recruiter/log-in"
+        href: "https://ghrig-new-update.vercel.app/recruiter/log-in"
     },
     {
         title: "Job Referrers",
@@ -828,7 +828,7 @@ const roles = [
         image: "/assets/images/jobReferrers.png",
         color: "bg-orange-50",
         iconColor: "text-orange-600",
-        href: "https://job-portal-frontend-ghrig-d1pi.vercel.app/super-admin/log-in"
+        href: "https://ghrig-new-update.vercel.app/super-admin/log-in"
     },
     {
         title: "Client/Corporate",
@@ -836,7 +836,7 @@ const roles = [
         image: "/assets/images/client.png",
         color: "bg-indigo-50",
         iconColor: "text-indigo-600",
-        href: "https://job-portal-frontend-ghrig-d1pi.vercel.app/corporate/log-in"
+        href: "https://ghrig-new-update.vercel.app/corporate/log-in"
     }
 ];
 const Engage = ()=>{
